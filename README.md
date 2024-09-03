@@ -1,2 +1,9 @@
-# cpf-validator
-Esse Projeto serve para validar validar cpf
+# Validador de CPF
+Esse é um Projeto simples que serve para validar  cpf
+
+### Tecnologias utilizadas:
+- HTML
+- CSS
+- JS
+- Typescript
+
