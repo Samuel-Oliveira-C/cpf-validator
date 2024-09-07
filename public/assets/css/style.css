@@ -1,0 +1,54 @@
+*{
+    margin:0px
+}
+.container{
+    display: grid;
+    width: 100vw;
+    height: 100vh; /* fazer grid?*/
+    grid-template-areas: 
+        "area1 area1"
+        "area2 area3"
+        "area2 area3";
+}
+header {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    height: 15vh;
+    grid-area: area1;
+}
+header .title{
+    margin-top: 5%;
+}
+.container-generators{
+    grid-area: area2;
+    justify-content: left;
+    width: 50vw;
+}
+.generator{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px 50px;
+}
+.button-generator{
+    margin-top: 10px;
+    border-radius: 50px;
+    border: 1px solid;
+}
+.container-validator{
+    grid-area: area3;
+    width: 50vw;
+}
+.validator{
+    display: flex;
+    justify-content: flex-end;
+    width: 50%;
+    gap: 20px 50px;
+}
+.verifybutton{
+    margin-top: 10px;
+    border-radius: 50px;
+    border-style: solid;
+}

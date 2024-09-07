@@ -8,14 +8,41 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <h1>Validador de CPF</h1>
-    <section class="container">
-        <div class="generator"></div>
-        <div class="validator"></div>
-    </section>
-    <section class="container-observation">
-        <div class="observation"></div>
-    </section>
+    <main class="container">
+        <header>
+            <h1 class="title">Validador de CPF</h1>
+        </header>
+        <section class="container-generators">
+            <div class="generator">
+                <label class="generator-valid">
+                    Gerador de CPF Válido: <br>
+                    <input type="number" name="validInput" id="validInput" readonly>
+                    <br>
+                    <button class="button-generator">Gerar CPF válido</button>
+                </label>
+                <label class="generator-invalid">
+                    Gerador de CPF Inválido: <br>
+                    <input type="number" name="invalidInput" id="invalidInput" readonly>
+                    <br>
+                    <button class="button-generator">Gerar CPF inválido</button>
+                </label>
+            </div>
+        </section>
+        <section class="container-validator">
+            <div class="validator">
+                <label>
+                    Verifique aqui o CPF: 
+                    <br>
+                    <input type="number" name="verifyCPF" id="verifyCPF">
+                    <br>
+                    <button class="verifybutton">Verificar CPF</button>
+                </label>
+            </div>
+        </section>
+        <section class="container-observation">
+            <div class="observation"></div>
+        </section>
+    </main>
     <script src="assets/javascript/script.js"></script>
 </body>
 </html>
