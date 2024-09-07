@@ -5,7 +5,7 @@
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "tsConfig":"tsc --init",
+    "tsConfig": "tsc --init",
     "compileWatch": "tsc -w"
   },
   "repository": {
@@ -18,5 +18,7 @@
     "url": "https://github.com/not-user0/cpf-validator/issues"
   },
   "homepage": "https://github.com/not-user0/cpf-validator#readme",
-  "devDependencies":{}
+  "devDependencies": {
+    "webpack": "^5.94.0"
+  }
 }
