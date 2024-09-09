@@ -1,9 +1,10 @@
 *{
-    margin:0px
+    margin:0px;
+    box-sizing: border-box;
 }
 .container{
     display: grid;
-    width: 100vw;
+    width: 98vw;
     height: 100vh; /* fazer grid?*/
     grid-template-areas: 
         "area1 area1"
@@ -13,7 +14,7 @@
 header {
     display: flex;
     justify-content: center;
-    width: 100vw;
+    width: 98vw;
     height: 15vh;
     grid-area: area1;
 }
@@ -23,7 +24,7 @@ header .title{
 .container-generators{
     grid-area: area2;
     justify-content: left;
-    width: 50vw;
+    width: 50%;
 }
 .generator{
     display: flex;
@@ -39,7 +40,7 @@ header .title{
 }
 .container-validator{
     grid-area: area3;
-    width: 50vw;
+    width: 100%;
 }
 .validator{
     display: flex;
