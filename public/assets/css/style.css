@@ -69,3 +69,13 @@ header .title{
     flex-direction: column;
     align-items: center;
 }
+.container-footer{
+    width: 97vw;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.container-footer div{
+    background-color: black;
+    color: white;
+}
