@@ -20,5 +20,8 @@
   "homepage": "https://github.com/not-user0/cpf-validator#readme",
   "devDependencies": {
     "webpack": "^5.94.0"
+  },
+  "dependencies": {
+    "cpf-validator": "file:"
   }
 }

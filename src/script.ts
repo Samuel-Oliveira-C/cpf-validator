@@ -1,33 +1,52 @@
-public geradorValidoCPF():number{
-    constructor(){
+class GeradoresCPF {
+    private static readonly TAMANHO_CPF = 11;
+    private static readonly PESO_MAXIMO_DIGITO1 = 10;
+    private static readonly PESO_MAXIMO_DIGITO2 = 11;
 
+    public gerarCPFValido(): string {
+        let cpf: number[];
+        do {
+            cpf = this.gerarNumerosAleatorios();
+            const digito1 = this.calcularDigitoVerificador(cpf, GeradoresCPF.PESO_MAXIMO_DIGITO1);
+            const digito2 = this.calcularDigitoVerificador(cpf, GeradoresCPF.PESO_MAXIMO_DIGITO2);
+            
+            cpf[9] = digito1;
+            cpf[10] = digito2;
+        } while (!this.validarCPF(cpf));
+
+        return cpf.join('');
     }
-    let acumuladorDigito1:number  = 0; 
-    let acumuladorDigito2:number = 0;
-    let numbers: number[] = this.randomNubers();   //esse metodo deve gerar numeros no range de 0 a 9 e deve retornar um array
+    public gerarCPFNaoValido(): string {
+        let cpf: number[];
+        do {
+            cpf = this.gerarNumerosAleatorios();
+            const digito1 = this.calcularDigitoVerificador(cpf, GeradoresCPF.PESO_MAXIMO_DIGITO1);
+            const digito2 = this.calcularDigitoVerificador(cpf, GeradoresCPF.PESO_MAXIMO_DIGITO2);
+            
+            cpf[9] = digito1;
+            cpf[10] = digito2;
+        } while (this.validarCPF(cpf));
 
-    acumuladorDigito1 = this.acumuladorDigito1(numbers);
-
-
-    let resultadoDigito1:number = acumuladorDigito1 % 11;
-    let resultadoDigito2:number = acumuladorDigito2 % 11;
-
-    if(resultadoDigito1 === 10 && resultadoDigito2 === 10){
-        resultadoDigito1 = 0;
-        resultadoDigito2 = 0;
-    }
-    else if(resultadoDigito1 === 10){
-        resultadoDigito1 = 0;
-    }
-    else{
-        resultadoDigito2 = 0
+        return cpf.join('');
     }
 
-    //verificar se é verdadeiro
-    if(resultadoDigito1 === numbers[09] && resultadoDigito2 === numbers[10]){
-        return 1 // verdadeiro
+    private gerarNumerosAleatorios():number[] {
+        let array = [];
+        for (let index = 0; index < 11; index++) {
+            let valor = Math.floor(Math.random() * 10);
+            array.push(valor);
+        }
+        return array;
     }
-    else{
-        return 0;   //falso
+    private calcularDigitoVerificador(numeros: number[], pesoMaximo: number): number {
+        const soma = numeros.slice(0, pesoMaximo - 1).reduce((acc, num, index) => acc + num * (pesoMaximo - index), 0);
+        const resto = soma % 11;
+        return resto < 2 ? 0 : 11 - resto;
+    }
+
+    private validarCPF(cpf: number[]): boolean {
+        const digito1 = this.calcularDigitoVerificador(cpf, GeradoresCPF.PESO_MAXIMO_DIGITO1);
+        const digito2 = this.calcularDigitoVerificador(cpf, GeradoresCPF.PESO_MAXIMO_DIGITO2);
+        return cpf[9] === digito1 && cpf[10] === digito2;
     }
 }
