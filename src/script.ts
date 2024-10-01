@@ -50,3 +50,5 @@ class GeradoresCPF {
         return cpf[9] === digito1 && cpf[10] === digito2;
     }
 }
+
+export {GeradoresCPF}
