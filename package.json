@@ -22,12 +22,17 @@
   "devDependencies": {
     "@testing-library/jest-dom": "^6.5.0",
     "@types/jest": "^29.5.13",
+    "@vitejs/plugin-react": "^4.3.2",
+    "@vitejs/plugin-vue": "^5.1.4",
+    "@vitejs/plugin-vue-jsx": "^4.0.1",
     "jest": "^29.7.0",
     "ts-jest": "^29.2.5",
     "typescript": "^5.6.2",
+    "vite-plugin-checker": "^0.8.0",
     "webpack": "^5.94.0"
   },
   "dependencies": {
-    "cpf-validator": "file:"
+    "cpf-validator": "file:",
+    "vite": "^5.4.8"
   }
 }

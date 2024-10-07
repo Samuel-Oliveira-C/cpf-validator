@@ -44,11 +44,9 @@ class GeradoresCPF {
         return resto < 2 ? 0 : 11 - resto;
     }
 
-    private validarCPF(cpf: number[]): boolean {
+    public validarCPF(cpf: number[]): boolean {
         const digito1 = this.calcularDigitoVerificador(cpf, GeradoresCPF.PESO_MAXIMO_DIGITO1);
         const digito2 = this.calcularDigitoVerificador(cpf, GeradoresCPF.PESO_MAXIMO_DIGITO2);
         return cpf[9] === digito1 && cpf[10] === digito2;
     }
 }
-
-export {GeradoresCPF}

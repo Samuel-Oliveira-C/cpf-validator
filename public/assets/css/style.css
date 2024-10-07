@@ -36,7 +36,12 @@ header .title{
     gap: 20px 50px;
     position: absolute;
 }
-.button-generator{
+.button-generator-valid{
+    margin-top: 10px;
+    border-radius: 50px;
+    border: 1px solid;
+}
+.button-generator-invalid{
     margin-top: 10px;
     border-radius: 50px;
     border: 1px solid;
