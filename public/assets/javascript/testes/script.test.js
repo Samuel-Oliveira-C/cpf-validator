@@ -1,6 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const script_1 = require("../script");
+import { GeradoresCPF } from "../script";
 function validarCPFExterno(cpf) {
     const cpfNumeros = cpf.split('').map(Number);
     if (new Set(cpfNumeros).size === 1) {
@@ -25,7 +23,7 @@ function validarCPFExterno(cpf) {
 describe('GeradoresCPF', () => {
     let gerador;
     beforeEach(() => {
-        gerador = new script_1.GeradoresCPF();
+        gerador = new GeradoresCPF();
     });
     describe('gerarCPFValido', () => {
         it('deve gerar um CPF válido', () => {

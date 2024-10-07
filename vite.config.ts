@@ -1,21 +1,25 @@
 import { defineConfig } from 'vite';
-import path from 'path';
+import { resolve } from 'path';
+
 
 export default defineConfig({
     build: {
-    outDir: 'public/assets',
     rollupOptions: {
         input: {
-            main: path.resolve(__dirname, 'src/index.html'),
+            main: resolve(__dirname, 'public/index.html')
         },
     },
 },
-    resolve: {
-        alias: {
-            '@': path.resolve(__dirname, 'src'),
+    plugins: [
+        {
+            name: 'configure-response-headers',
+            configureServer: (server) => {
+                server.middlewares.use((_req, res, next) => {
+                    res.setHeader('Cross-Origin-Embedder-Policy', 'require-corp');
+                    res.setHeader('Cross-Origin-Opener-Policy', 'same-origin');
+                    next();
+                });
+            },
         },
-},
-    server: {
-        port: 3000,
-    },
+    ],
 });

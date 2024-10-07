@@ -1,4 +1,4 @@
-//import { GeradoresCPF } from "./script.js"
+import { GeradoresCPF } from "./script.js"
 
 type ElementoButton = HTMLButtonElement
 
@@ -11,7 +11,7 @@ const btElementInvalid = document.querySelector(".button-generator-invalid") as 
 const validInput = document.querySelector("#validInput") as HTMLInputElement;
 const invalidInput = document.querySelector("#invalidInput") as HTMLInputElement;
 const verifyCPF = document.querySelector("#verifyCPF") as HTMLInputElement;
-const verifybutton = document.querySelector("#verifybutton") as ElementoButton;
+const verifybutton = document.querySelector(".verifybutton") as ElementoButton;
 
 //Eventos
 btElementValid.addEventListener("click", () => {
@@ -37,3 +37,4 @@ verifybutton.addEventListener("click",() =>{
 })
 
 
+//TODO refazer esse projeto só que sem o vite, e dessa vez no tsconfig colocar module ES6 e target ES6 

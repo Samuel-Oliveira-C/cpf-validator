@@ -1,6 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.GeradoresCPF = void 0;
 class GeradoresCPF {
     gerarCPFValido() {
         let cpf;
@@ -43,7 +40,7 @@ class GeradoresCPF {
         return cpf[9] === digito1 && cpf[10] === digito2;
     }
 }
-exports.GeradoresCPF = GeradoresCPF;
 GeradoresCPF.TAMANHO_CPF = 11;
 GeradoresCPF.PESO_MAXIMO_DIGITO1 = 10;
 GeradoresCPF.PESO_MAXIMO_DIGITO2 = 11;
+export { GeradoresCPF };

@@ -1,13 +1,11 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const script_js_1 = require("./script.js");
-const classCPF = new script_js_1.GeradoresCPF();
+import { GeradoresCPF } from "./script.js";
+const classCPF = new GeradoresCPF();
 const btElementValid = document.querySelector(".button-generator-valid");
 const btElementInvalid = document.querySelector(".button-generator-invalid");
 const validInput = document.querySelector("#validInput");
 const invalidInput = document.querySelector("#invalidInput");
 const verifyCPF = document.querySelector("#verifyCPF");
-const verifybutton = document.querySelector("#verifybutton");
+const verifybutton = document.querySelector(".verifybutton");
 btElementValid.addEventListener("click", () => {
     const cpfValido = classCPF.gerarCPFValido();
     validInput.value = cpfValido;
